@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>s
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pomodoro Clock</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="heading">Pomodoro Clock</h1>
+    </div>
+
+    <div class="container">
+        <section class="clock_controls row">
+            <div class="break-time-control">
+                <h2>Break Length</h2>
+                <div class="clock-controller">
+                    <button type="button" class="minus" onclick="updateCounter('break-length', -1)">-</button>
+                    <span id="break-length" value="5" class="text-center">5</span>
+                    <button type="button" class="plus" onclick="updateCounter('break-length', 1)">+</button>
+                </div>
+            </div>
+            <div>
+                <audio id="motivational-audio" src="https://rawgit.com/usmaaaf/PomodoroClock/master/fearless-motivation-life-s-tough-epic-background-music.mp3"></audio>
+            </div>
+            <div class="session-time-control">
+                <h2>Session Length</h2>
+                <div class="clock-controller">
+                    <button type="button" class="minus" onclick="updateCounter('session-length', -1)">-</button>
+                    <span id="session-length" value="25" class="text-center">25</span>
+                    <button type="button" class="plus" onclick="updateCounter('session-length', 1)">+</button>
+                </div>
+            </div>
+        </section>
+        <section class="clock">
+            <div class="progress">
+                <div id="clock-status">Session</div>
+                <div id="time-clock">25:00</div>
+                <div id="color-fill"></div>
+            </div>
+
+        </section>
+        <section class="clock_controls">
+            <div class="controls">
+                <button id="start-stop-toggle" type="button">Start</button>
+            </div>
+            <div class="controls">
+                <button id="reset" type="button"> Reset</button>
+            </div>
+        </section>
+
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
